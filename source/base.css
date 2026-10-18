@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Exo 2', Arial, sans-serif;
+    font-family: 'Golos Text', Arial, sans-serif;
     color: white;
     margin: 0 !important;
     padding: 0;
@@ -136,7 +136,7 @@ body {
 /* ========== ЗАГОЛОВКИ СЕКЦИЙ ========== */
 .printanit-section-title {
     font-size: 2.3rem;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
     color: var(--printanit-accent-color);
     text-shadow:
         0 0 10px rgba(0, 255, 255, 0.7),
@@ -262,7 +262,7 @@ body {
 }
 
 .printanit-hero-title {
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
     font-size: 2.8rem;
     margin: 0 0 15px 0;
     color: #ffffff;
@@ -368,7 +368,7 @@ body {
     color: var(--printanit-accent-color);
     font-size: 1.8rem;
     margin: 1.2em 0 0.6em;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     padding-bottom: 8px;
 }
@@ -379,7 +379,7 @@ body {
     color: var(--printanit-accent-color);
     font-size: 1.4rem;
     margin: 0.5em 0 0.5em;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
 }
 
 .publication-content h4,
@@ -563,7 +563,7 @@ body {
     border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 4px;
     padding: 2px 5px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Golos Text', monospace;
     font-size: 0.9rem;
     color: var(--printanit-accent-hover);
 }
@@ -775,7 +775,7 @@ body {
     .product-description h3,
     .product-description h4 {
         color: #0ff !important;
-        font-family: 'Exo 2', sans-serif !important;
+        font-family: 'Golos Text', sans-serif !important;
         margin-top: 1em !important;
         margin-bottom: 0.5em !important;
     }
@@ -898,7 +898,7 @@ body {
     color: #0ff !important;
     font-size: 1.6rem !important;
     margin: 1.2em 0 0.6em !important;
-    font-family: 'Exo 2', sans-serif !important;
+    font-family: 'Golos Text', sans-serif !important;
     border-bottom: 1px solid rgba(0, 255, 255, 0.2) !important;
     padding-bottom: 8px !important;
     display: flex;
@@ -910,7 +910,7 @@ body {
     color: #0ff !important;
     font-size: 1.3rem !important;
     margin: 1em 0 0.5em !important;
-    font-family: 'Exo 2', sans-serif !important;
+    font-family: 'Golos Text', sans-serif !important;
 }
 
 .material-full-desc h4 {
@@ -1055,7 +1055,7 @@ body {
     border: 1px solid rgba(0, 255, 255, 0.2) !important;
     border-radius: 4px !important;
     padding: 2px 5px !important;
-    font-family: 'Courier New', monospace !important;
+    font-family: 'Golos Text', monospace !important;
     font-size: 0.9rem !important;
     color: #7fffd4 !important;
 }
@@ -1236,7 +1236,7 @@ body {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 1.4rem;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     padding-bottom: 10px;
@@ -1262,7 +1262,7 @@ body {
     color: #0ff;
     font-size: 1.3rem;
     margin: 1.2em 0 0.6em;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Golos Text', sans-serif;
 }
 
 .category-description-content h4 {

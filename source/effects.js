@@ -352,7 +352,25 @@ function initMatrixRain() {
 
   const slogan = "СВЕТИСЬ ЯРЧЕ";
   let textX = canvas.width / renderScale / 2;
-  const textY = 100;
+  let textY = 100;
+  let sloganSize = 40;
+  function alignSlogan() {
+    const row = document.querySelector('.printanit-header-middle-row');
+    if (!row || !row.offsetHeight) return;
+    textY = row.offsetTop + row.offsetHeight / 2;
+    const logo = row.querySelector('.printanit-header-logo').getBoundingClientRect();
+    const search = row.querySelector('.printanit-header-search').getBoundingClientRect();
+    const bounds = canvas.getBoundingClientRect();
+    const left = logo.right + 24;
+    const right = search.left - 24;
+    textX = (left + right) / 2 - bounds.left;
+    ctx.save();
+    ctx.font = "800 40px 'Golos Text', sans-serif";
+    sloganSize = Math.min(40, Math.max(28, Math.floor((right - left) / ctx.measureText(slogan).width * 40)));
+    ctx.restore();
+  }
+  alignSlogan();
+  document.fonts.ready.then(alignSlogan);
 
     // ========== НОВАЯ ПРОВЕРКА ==========
   // Функция для проверки, нужно ли рисовать текст
@@ -446,7 +464,7 @@ function initMatrixRain() {
       const isVisible = drop.y >= rainVisibleTop && drop.y < rainVisibleBottom;
 
       if (isVisible) {
-        ctx.font = `${drop.size}px 'Pixelify Sans', monospace`;
+        ctx.font = `${drop.size}px 'Golos Text', monospace`;
 
         const baseColor = drop.color;
         const opacityMatch = baseColor.match(/[\d\.]+(?=\))/);
@@ -490,7 +508,7 @@ function initMatrixRain() {
     const totalOpacity = effects.textOpacity * blinkOpacity;
     if (shouldDrawText()) {
       if (totalOpacity > 0.01) {
-        ctx.font = "800 40px 'Jura', sans-serif";
+        ctx.font = `800 ${sloganSize}px 'Golos Text', sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
@@ -526,6 +544,7 @@ function initMatrixRain() {
     canvas.height = 160 * renderScale;
     ctx.scale(renderScale, renderScale);
     textX = canvas.width / renderScale / 2;
+    alignSlogan();
   }
 
   window.addEventListener('resize', handleResize);

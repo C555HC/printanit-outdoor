@@ -1,0 +1,31 @@
+{
+  "aboutHeightDifference": 0,
+  "background": "url(\"http://127.0.0.1:4173/assets/original-background.webp\")",
+  "featureDescriptionDifference": 0,
+  "featureIconDifference": 0,
+  "featureTitleDifference": 0,
+  "fontFamilies": [
+    "\"Golos Text\""
+  ],
+  "footer": {
+    "height": 345,
+    "width": 1400,
+    "x": 20
+  },
+  "footerTitleDifference": 0,
+  "header": {
+    "height": 233,
+    "width": 1400,
+    "x": 20
+  },
+  "main": {
+    "height": 3057.234375,
+    "width": 1400,
+    "x": 20
+  },
+  "scrollWidth": 1440,
+  "statisticsTitleDifference": 0,
+  "stepDescriptionDifference": 0,
+  "stepTitleDifference": 0,
+  "viewport": 1440
+}

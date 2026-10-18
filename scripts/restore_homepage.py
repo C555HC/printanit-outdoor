@@ -4,8 +4,15 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
+FONT = 'Golos Text'
+
 def clean(text):
     return '\n'.join(line.rstrip() for line in text.splitlines()).strip() + '\n'
+
+def unify_font(text):
+    for family in ['Montserrat', 'Pixelify Sans', 'Exo 2', 'Jura', 'Courier New']:
+        text = text.replace("'" + family + "'", "'" + FONT + "'")
+    return text
 
 source = (ROOT / 'reference/original.html').read_text()
 # Comments include obsolete scripts and commented markup, not visible content.
@@ -37,7 +44,7 @@ for url, local in stylesheets.items():
 for original, name in [('styles-base.css', 'base.css'), ('styles-main.css', 'main.css'), ('styles-extra.css', 'extra.css')]:
     css = (ROOT / 'reference' / original).read_text()
     css = re.sub(r'(?:(?:https?:)?//outdoor\.printanit\.ru)/wp-content/themes/outdoor/(?:css/)?images/site-background.webp', '../assets/original-background.webp', css)
-    css = css.replace("'Montserrat'", "'Exo 2'").replace("'Pixelify Sans'", "'Exo 2'")
+    css = unify_font(css)
     (ROOT / 'source' / name).write_text(clean(css))
 
 source = re.sub(r'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6\.4\.0/css/all.min.css[^\"\']*', 'assets/vendor/fontawesome.css', source)
@@ -56,13 +63,34 @@ effects = effects.replace(
 effects = effects.replace('  const ctx = canvas.getContext("2d");', '  const ctx = canvas.getContext("2d");\n  ctx.scale(renderScale, renderScale);', 1)
 effects = effects.replace('Math.floor(canvas.width / columnSpacing)', 'Math.floor(canvas.width / renderScale / columnSpacing)', 1)
 effects = effects.replace('const textX = canvas.width / 2;', 'let textX = canvas.width / renderScale / 2;', 1)
+effects = effects.replace('const textY = 100;', """let textY = 100;
+  let sloganSize = 40;
+  function alignSlogan() {
+    const row = document.querySelector('.printanit-header-middle-row');
+    if (!row || !row.offsetHeight) return;
+    textY = row.offsetTop + row.offsetHeight / 2;
+    const logo = row.querySelector('.printanit-header-logo').getBoundingClientRect();
+    const search = row.querySelector('.printanit-header-search').getBoundingClientRect();
+    const bounds = canvas.getBoundingClientRect();
+    const left = logo.right + 24;
+    const right = search.left - 24;
+    textX = (left + right) / 2 - bounds.left;
+    ctx.save();
+    ctx.font = "800 40px 'Jura', sans-serif";
+    sloganSize = Math.min(40, Math.max(28, Math.floor((right - left) / ctx.measureText(slogan).width * 40)));
+    ctx.restore();
+  }
+  alignSlogan();
+  document.fonts.ready.then(alignSlogan);""", 1)
+draw_font = '        ctx.font = "800 40px \'Jura\', sans-serif";'
+effects = effects.replace(draw_font, '        ctx.font = `800 ${sloganSize}px \'Jura\', sans-serif`;', 1)
 effects = effects.replace('ctx.clearRect(0, 0, canvas.width, canvas.height);', 'ctx.clearRect(0, 0, canvas.width / renderScale, canvas.height / renderScale);', 1)
 effects = effects.replace(
     '    canvas.width = container.parentElement.clientWidth || 500;\n    canvas.height = 160;',
-    '    canvas.width = (container.parentElement.clientWidth || 500) * renderScale;\n    canvas.height = 160 * renderScale;\n    ctx.scale(renderScale, renderScale);\n    textX = canvas.width / renderScale / 2;',
+    '    canvas.width = (container.parentElement.clientWidth || 500) * renderScale;\n    canvas.height = 160 * renderScale;\n    ctx.scale(renderScale, renderScale);\n    textX = canvas.width / renderScale / 2;\n    alignSlogan();',
     1,
 )
-(ROOT / 'source/effects.js').write_text(clean(effects))
+(ROOT / 'source/effects.js').write_text(clean(unify_font(effects)))
 
 # Local preview must not run production analytics, CAPTCHA or link prefetches.
 def script_filter(match):
@@ -88,10 +116,16 @@ source = re.sub(r'<noscript>\s*<div>\s*<img[^>]*mc\.yandex\.ru.*?</noscript>', '
 # at its thumbnail URL and original URL. Keep the original dark fallback.
 source = re.sub(r'\sdata-back="https://outdoor.printanit.ru/wp-content/uploads/2026/10/0647788380fd4045e00638fc61665885-576x1024.jpg"', '', source)
 source = re.sub(r'<link[^>]+rel=[\"\']dns-prefetch[\"\'][^>]*>', '', source)
-source = source.replace('</head>', '<script src="app.js" defer></script>\n</head>')
+preloads = []
+for face in re.findall(r'@font-face\s*\{([^}]+)\}', (ROOT / 'source/fonts.css').read_text()):
+    weight = re.search(r'font-weight:\s*(\d+)', face)
+    path = re.search(r'url\([\"\']?([^\"\')]+)', face)
+    if weight and path and weight[1] in ['400', '700', '800']:
+        preloads.append('<link rel="preload" as="font" type="font/ttf" crossorigin href="' + path[1].removeprefix('../') + '">')
+source = source.replace('</head>', '\n'.join(preloads) + '\n<script src="app.js" defer></script>\n</head>')
 source = source.replace('</body>', '<link rel="stylesheet" href="styles.css">\n</body>')
 source = source.replace('<a href="https://outdoor.printanit.ru/"', '<a href="/"')
 source = source.replace('href="/privacy-policy"', 'href="https://outdoor.printanit.ru/privacy-policy/"')
-source = source.replace("'Montserrat'", "'Exo 2'").replace("'Pixelify Sans'", "'Exo 2'")
+source = unify_font(source)
 (ROOT / 'index.html').write_text(clean(source))
 print('Restored homepage markup, source CSS and original effects.')

@@ -1,92 +1,35 @@
 @font-face {
-  font-family: 'Jura';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../assets/fonts/z7NOdRfiaC4Vd8hhoPzfb5vBTP0D7auh.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Jura';
+  font-family: 'Golos Text';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../assets/fonts/z7NOdRfiaC4Vd8hhoPzfb5vBTP1d7auh.ttf') format('truetype');
+  src: url('../assets/fonts/golos-q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plVRRQ5c.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Jura';
+  font-family: 'Golos Text';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../assets/fonts/z7NOdRfiaC4Vd8hhoPzfb5vBTP1v7auh.ttf') format('truetype');
+  src: url('../assets/fonts/golos-q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plVjRQ5c.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Jura';
+  font-family: 'Golos Text';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../assets/fonts/z7NOdRfiaC4Vd8hhoPzfb5vBTP2D6quh.ttf') format('truetype');
+  src: url('../assets/fonts/golos-q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plWPQg5c.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Jura';
+  font-family: 'Golos Text';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../assets/fonts/z7NOdRfiaC4Vd8hhoPzfb5vBTP266quh.ttf') format('truetype');
+  src: url('../assets/fonts/golos-q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plW2Qg5c.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Golos Text';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   font-display: swap;
-  src: url('../assets/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../assets/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../assets/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../assets/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../assets/fonts/7cH1v4okm5zmbvwkAx_sfcEuiD8jvvKcPg.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../assets/fonts/7cH1v4okm5zmbvwkAx_sfcEuiD8jjPKcPg.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../assets/fonts/7cH1v4okm5zmbvwkAx_sfcEuiD8jYPWcPg.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../assets/fonts/7cH1v4okm5zmbvwkAx_sfcEuiD8jWfWcPg.ttf') format('truetype');
+  src: url('../assets/fonts/golos-q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plXRQg5c.ttf') format('truetype');
 }
