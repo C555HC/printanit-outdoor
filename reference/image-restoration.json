@@ -1,0 +1,15 @@
+{
+  "mode": "built-in imagegen",
+  "background": {
+    "source": "assets/original-background.webp",
+    "output": "assets/background-restored.webp",
+    "fullOutput": "assets/background-restored.png",
+    "prompt": "Use case: precise-object-edit. Asset type: background image restoration for an existing website, not a redesign. Edit target: the supplied original-background.webp. Restore and upscale this exact same nighttime city scene to a detailed 3840x2160 image. Preserve the exact camera framing, building silhouettes, billboard positions, wet pavement, distant people, reflections, purple/cyan/magenta lighting and existing color balance. Reduce the soft low-resolution blur in architectural edges and pavement texture, resolve plausible fine detail while keeping the original scene recognizable in a direct before/after comparison. The lower wet street is already fairly crisp: preserve it. Do not recompose, crop, add objects, move billboards, add readable advertising copy, change weather or change the style. No graphic design, interface, overlay text, new logos, new watermarks or heavy sharpening halos. Keep dark night atmosphere, no exposure boost."
+  },
+  "hero": {
+    "source": "assets/original-hero.jpg",
+    "output": "assets/hero-restored.webp",
+    "fullOutput": "assets/hero-restored.png",
+    "prompt": "Use case: precise-object-edit. Asset type: high-resolution restoration of an existing website hero photograph. Edit target: original-hero.jpg. Restore this exact Times Square photograph without redesign or recomposition. Keep every building, billboard, sign, tower, car, taxi, pedestrian, existing lettering and the photographer signature at the lower right in the same place. Preserve framing, perspective, nighttime lighting, turquoise/yellow/magenta balance, original exposure. Only improve usable resolution, remove low-resolution compression blur and resolve edges and natural material detail, with no oversharpening. Preserve all watermarks and signatures exactly, do not remove them. No new text, no new logos, no new architecture, no new objects. Output a high-resolution landscape image with the original approximate 993:620 aspect ratio, preferably 3200x2000. It must look like the same photo in a before/after comparison."
+  }
+}

@@ -1,0 +1,3 @@
+Built-in imagegen. Input: assets/original-background.webp. Output: assets/background-restored.png and assets/background-restored.webp.
+
+Restore and upscale this exact same nighttime city scene. Preserve camera framing, building silhouettes, billboard positions, wet pavement, people, reflections and purple/cyan/magenta lighting. Reduce soft low-resolution blur in architectural edges and pavement texture. Do not recompose, crop, add objects, move billboards, add advertising copy, change weather or style. Keep dark atmosphere, no exposure boost or sharpening halos.

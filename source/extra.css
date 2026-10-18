@@ -1,0 +1,175 @@
+/*
+Theme Name: Outdoor
+Template: astra
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../assets/original-background.webp) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Exo 2', Arial, sans-serif;
+  color: white;
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+:root {
+  --printanit-accent-color: #0ff;
+  --printanit-accent-hover: #7fffd4;
+}
+
+/* Общие стили стеклянных элементов */
+.printanit-glass-header,
+.printanit-glass-footer,
+.printanit-glass-hero,
+.printanit-glass-card {
+  background: rgba(15, 25, 50, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Главный контейнер */
+.printanit-main-container {
+    width: 1400px;
+    position: relative;
+    align-self: center;
+    z-index: 10;
+    min-height: 100vh;
+    flex: 1;
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+
+.printanit-section-title {
+  font-size: 2.3rem;
+  /*margin-bottom: 20px;*/
+  position: relative;
+  display: inline-block;
+  /*color: #0ff;*/
+  color:#fff;
+  text-shadow:
+    0 0 10px rgba(0, 255, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Цифровой дождь
+.printanit-matrix-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 120px;
+  z-index: 0;
+  background: transparent;
+  filter:
+    drop-shadow(0 0 20px rgba(100, 255, 255, 0.7))
+    drop-shadow(0 0 5px white);
+}
+
+.printanit-matrix-rain {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 15px rgba(7, 209, 255, 0.6))
+    drop-shadow(0 0 5px rgba(0, 200, 255, 0.4));
+  animation: printanit-fadeIn 1s 1s forwards;
+}
+
+@keyframes printanit-fadeIn {
+  to { opacity: 0.6; }
+}*/
+
+/* Лайтбокс */
+.printanit-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,10,20,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.printanit-lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.printanit-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.printanit-lightbox-img {
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+}
+
+.printanit-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.printanit-lightbox-close:hover {
+  transform: rotate(90deg);
+  color: #0ff;
+}
+
+@keyframes printanit-fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анимация пульсации неона */
+@keyframes neon-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7))
+                drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))
+                drop-shadow(0 0 15px rgba(0, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.9))
+                drop-shadow(0 0 20px rgba(0, 255, 255, 0.7))
+                drop-shadow(0 0 30px rgba(0, 255, 255, 0.5));
+    }
+}
+
+/* Анимация загрузки (для GIF) */
+@keyframes loading-scan {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(100% + 200px) 0; }
+}
+
+/* Эффект набора текста */
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
